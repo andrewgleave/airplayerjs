@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <title>airplayerjs</title>
+        <style>
+            body {font: 18px/23px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif; color: #222; text-shadow:0px -1px 0px #eee;text-align: center;}
+            h1 {font-size:50px;text-align:center}
+            article {display:block; text-align: left; width: 500px; margin: 0 auto; }
+            a {color:#5CB5E8;text-align:center;}
+            a.b {display:block;}
+            a:hover{color:#75C5E8}
+            code {padding:2px;background-color:#f1f1f1;}
+            em {color:#888;}
+        </style>
+        <script type="text/javascript">
+            /* --- Uncompressed ---
+            (function (doc) {
+                function apply(element, attribute) {
+                    var clone = element.cloneNode(true);
+                    clone.setAttribute(attribute, 'allow');
+                    element.parentNode.appendChild(clone);
+                    element.parentNode.removeChild(element);
+                }
+                var video = doc.getElementsByTagName('video');
+                var embedded = doc.getElementsByTagName('embed');
+                for(var i = video.length-1; i>= 0; i--) {
+                    apply(video[i], 'x-webkit-airplay');
+                }
+                for(var i = embedded.length-1; i>=0; i--) {
+                    apply(embedded[i],'airplay');
+                }
+            })(document)
+            */
+        </script>
+    </head>
+    <body>
+        <article>
+           <h1>airplayerjs</h1>
+           <p>Use this bookmarklet to enable streaming (some) video content to your Apple TV.</p>
+           <h3>Usage <em>(Requires iOS 4.3)</em></h3>
+           <p>Click the following link, add it as a bookmark and click Done.</p> 
+           <a class="b" href="http://andrewgleave.github.com/airplayerjs/?javascript:(function(b){function d(c,g){var e=c.cloneNode(true);e.setAttribute(g,'allow');c.parentNode.appendChild(e);c.parentNode.removeChild(c)}var f=b.getElementsByTagName('video');b=b.getElementsByTagName('embed');for(var a=f.length-1;a>=0;a--)d(f[a],'x-webkit-airplay');for(a=b.length-1;a>=0;a--)d(b[a],'airplay')})(document);">Enable AirPlay</a>
+           <p>Now, go back in to your bookmarks, tap "Edit", select the "Enable Airplay" bookmark and remove the following text from the url:</p>
+           <code>http://andrewgleave.github.com/airplayerjs/?</code>
+           <p>You should be left with a url which starts with <code>javascript</code>. Tap "Done" and return to Safari. The bookmarklet is now ready to use.</p>
+           <p>Run the bookmarklet before tapping on a video.  If the script runs successfully, you should see the video content flash momentarily as its element is&nbsp;replaced.</p>
+           <p>If it worked, you will see the AirPlay icon in the video controls and you should be able to send the video (rather than just audio) to your&nbsp;Apple&nbsp;TV.</p>
+           
+           <h3>Demo</h3>
+           <p>You can try it out on <a href="http://diveintohtml5.org/video.html#video">Dive into HTML5 video</a>.</p>
+           
+           <p><em>Your Milage May Vary: This is just a DOM hack and doesn't always work. If it fails to play, dismissing the video and then tapping on it again (without running the script for a second time) will sometimes get running.</em></p>
+           <h3>Disclaimer</h3>
+           <p>I take no responsibility whatsoever for your usage of this script.</p>
+           <p><a href="http://twitter.com/andrewgleave">@andrewgleave</a></p>
+        </article>
+    </body>
+</html>
